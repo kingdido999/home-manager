@@ -46,6 +46,9 @@
 
     # Dev 
     pkgs.nodejs_22
+
+    # LSP
+    pkgs.nil
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -102,6 +105,7 @@
 
   programs.helix = {
     enable = true;
+
     settings = {
       theme = "solarized_light";
 
