@@ -41,6 +41,8 @@
     # Shell
     pkgs.fish
     pkgs.fzf
+    pkgs.fd
+    pkgs.bat
 
     # Fonts
     pkgs.fira-code
@@ -110,7 +112,6 @@
     enable = true;
     plugins = [
       { name = "hydro"; src = pkgs.fishPlugins.hydro.src; }
-      { name = "fzf-fish"; src = pkgs.fishPlugins.fzf-fish.src; }
     ];
     shellInit = ''
       set -x PATH /nix/var/nix/profiles/default/bin $PATH
