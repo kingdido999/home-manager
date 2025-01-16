@@ -107,6 +107,9 @@
     plugins = [
       { name = "hydro"; src = pkgs.fishPlugins.hydro.src; }
     ];
+    shellInit = ''
+      set -x PATH $HOME/.nix-profile/bin $PATH
+    '';
   };
 
   programs.helix = {
