@@ -40,6 +40,7 @@
 
     # Shell
     pkgs.fish
+    pkgs.fzf
 
     # Fonts
     pkgs.fira-code
@@ -55,6 +56,9 @@
 
     # Multiplexer
     pkgs.zellij
+
+    # Git
+    pkgs.delta
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -106,8 +110,10 @@
     enable = true;
     plugins = [
       { name = "hydro"; src = pkgs.fishPlugins.hydro.src; }
+      { name = "fzf-fish"; src = pkgs.fishPlugins.fzf-fish.src; }
     ];
     shellInit = ''
+      set -x PATH /nix/var/nix/profiles/default/bin $PATH
       set -x PATH $HOME/.nix-profile/bin $PATH
     '';
   };
