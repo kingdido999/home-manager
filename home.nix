@@ -52,6 +52,9 @@
 
     # Data Visualization
     pkgs.d2
+
+    # Multiplexer
+    pkgs.zellij
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
