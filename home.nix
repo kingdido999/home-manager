@@ -119,6 +119,14 @@
     '';
   };
 
+  programs.zellij = {
+    enable = true;
+    enableFishIntegration = true;
+    settings = {
+      theme = "solarized-light";
+    };
+  };
+
   programs.helix = {
     enable = true;
 
