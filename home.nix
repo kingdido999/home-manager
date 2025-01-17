@@ -101,7 +101,10 @@
 
   home.shellAliases = {
     ga = "git add .";
-    gcm = "git commit -m";
+    gc = "git commit -m";
+    gd = "git diff";
+    gs = "git status";
+    gp = "git push";
   };
 
   # Let Home Manager install and manage itself.
