@@ -49,6 +49,7 @@
 
     # Dev 
     pkgs.nodejs_22
+    pkgs.yarn
 
     # LSP
     pkgs.nil
