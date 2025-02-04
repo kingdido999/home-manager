@@ -109,6 +109,9 @@
     gd = "git diff";
     gs = "git status";
     gp = "git push";
+
+    he = "home-manager edit";
+    hs = "home-manager switch";
   };
 
   # Let Home Manager install and manage itself.
@@ -143,7 +146,7 @@
     enable = true;
 
     settings = {
-      theme = "solarized_dark";
+      theme = "solarized_light";
 
       editor = {
         cursor-shape = {
@@ -164,8 +167,6 @@
       keys.insert = {
         j = { j = "normal_mode"; };
       };     
-
-      
     };
   };
 }
