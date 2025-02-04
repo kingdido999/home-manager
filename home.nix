@@ -62,6 +62,9 @@
 
     # Git
     pkgs.delta
+
+    # Note taking
+    pkgs.marksman
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -140,7 +143,7 @@
     enable = true;
 
     settings = {
-      theme = "solarized_light";
+      theme = "solarized_dark";
 
       editor = {
         cursor-shape = {
@@ -152,11 +155,17 @@
         file-picker = {
           hidden = false;
         };
+
+        soft-wrap = {
+          enable = true;
+        };
       };
 
       keys.insert = {
         j = { j = "normal_mode"; };
       };     
+
+      
     };
   };
 }
