@@ -139,6 +139,7 @@
     enableFishIntegration = true;
     settings = {
       theme = "solarized-light";
+      default_borderless = true;
     };
   };
 
