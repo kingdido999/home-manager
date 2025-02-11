@@ -57,6 +57,9 @@
     # Data Visualization
     pkgs.d2
 
+    # Terminal
+    pkgs.alacritty
+
     # Multiplexer
     pkgs.zellij
 
@@ -168,6 +171,25 @@
       keys.insert = {
         j = { j = "normal_mode"; };
       };     
+    };
+  };
+
+  programs.alacritty = {
+    enable = true;
+
+    settings = {
+      general.import = [
+        "themes/solarized_light.toml"
+      ];
+
+      font.size = 14;
+      font.normal = {
+        family = "Fira Code";
+        style = "Regular";
+      };
+
+      window.padding = { x = 6; y = 6; };
+      terminal.shell = "fish";
     };
   };
 }
