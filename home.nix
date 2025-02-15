@@ -58,15 +58,13 @@
     pkgs.d2
 
     # Terminal
-    pkgs.alacritty
-
-    # Multiplexer
-    pkgs.zellij
+    pkgs.wezterm
 
     # Git
     pkgs.delta
 
     # Note taking
+    pkgs.nb
     pkgs.marksman
   ];
 
@@ -85,6 +83,7 @@
     # '';
 
     ".aerospace.toml".source = ./aerospace.toml;
+    ".wezterm.lua".source = ./wezterm.lua;
   };
 
   # Home Manager can also manage your environment variables through
@@ -104,6 +103,7 @@
   #
   home.sessionVariables = {
     EDITOR = "hx";
+    SHELL = "${pkgs.fish}/bin/fish";
   };
 
   home.shellAliases = {
@@ -112,7 +112,9 @@
     gd = "git diff";
     gs = "git status";
     gp = "git push";
+    gpl = "git pull";
 
+    hee = "hx ~/.config/home-manager";
     he = "home-manager edit";
     hs = "home-manager switch";
   };
@@ -135,15 +137,6 @@
       set -x PATH /nix/var/nix/profiles/default/bin $PATH
       set -x PATH $HOME/.nix-profile/bin $PATH
     '';
-  };
-
-  programs.zellij = {
-    enable = true;
-    enableFishIntegration = true;
-    settings = {
-      theme = "solarized-light";
-      default_borderless = true;
-    };
   };
 
   programs.helix = {
@@ -174,22 +167,4 @@
     };
   };
 
-  programs.alacritty = {
-    enable = true;
-
-    settings = {
-      general.import = [
-        "themes/solarized_light.toml"
-      ];
-
-      font.size = 14;
-      font.normal = {
-        family = "Fira Code";
-        style = "Regular";
-      };
-
-      window.padding = { x = 6; y = 6; };
-      terminal.shell = "fish";
-    };
-  };
 }
