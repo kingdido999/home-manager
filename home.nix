@@ -65,7 +65,9 @@
 
     # Note taking
     pkgs.nb
-    pkgs.marksman
+
+    # Browser
+    pkgs.w3m
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
