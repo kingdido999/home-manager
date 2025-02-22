@@ -63,11 +63,6 @@
     # Git
     pkgs.delta
 
-    # Note taking
-    pkgs.nb
-
-    # Browser
-    pkgs.w3m
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -134,6 +129,7 @@
     enable = true;
     plugins = [
       { name = "hydro"; src = pkgs.fishPlugins.hydro.src; }
+      { name = "fzf-fish"; src = pkgs.fishPlugins.fzf-fish.src; }
     ];
     shellInit = ''
       set -x PATH /nix/var/nix/profiles/default/bin $PATH
