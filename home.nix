@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 
 {
+  nix.package = pkgs.nix;
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = builtins.getEnv "USER";
@@ -63,6 +66,11 @@
     # Git
     pkgs.delta
 
+    # Password Manager
+    pkgs.pass
+
+    # Encryption
+    pkgs.gnupg
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
