@@ -50,10 +50,6 @@
     # Fonts
     pkgs.fira-code
 
-    # Dev 
-    pkgs.nodejs_22
-    pkgs.yarn
-
     # LSP
     pkgs.nil
 
@@ -65,12 +61,6 @@
 
     # Git
     pkgs.delta
-
-    # Password Manager
-    pkgs.pass
-
-    # Encryption
-    pkgs.gnupg
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -87,7 +77,6 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
 
-    ".aerospace.toml".source = ./aerospace.toml;
     ".wezterm.lua".source = ./wezterm.lua;
   };
 
@@ -131,6 +120,13 @@
     enable = true;
     userName = "Pengcheng Ding";
     userEmail = "info@pcding.com";
+
+    extraConfig = {
+      # Work repo config
+      "includeIf \"gitdir:~/work/\"" = {
+        path = "~/.gitconfig-work";
+      };
+    };
   };
 
   programs.fish = {
@@ -142,6 +138,9 @@
     shellInit = ''
       set -x PATH /nix/var/nix/profiles/default/bin $PATH
       set -x PATH $HOME/.nix-profile/bin $PATH
+      set -x PATH $HOME/bin $PATH
+      set -x PATH $HOME/.local/bin $PATH
+      set -x PATH /usr/local/bin $PATH
     '';
   };
 
