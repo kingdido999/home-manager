@@ -78,6 +78,7 @@
     # '';
 
     ".wezterm.lua".source = ./wezterm.lua;
+    ".config/helix/themes/alabaster.toml".source = ./themes/alabaster.toml;
   };
 
   # Home Manager can also manage your environment variables through
@@ -148,7 +149,7 @@
     enable = true;
 
     settings = {
-      theme = "solarized_light";
+      theme = "alabaster";
 
       editor = {
         cursor-shape = {
