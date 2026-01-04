@@ -54,13 +54,6 @@ The `home.nix` file is the main configuration entry point structured as a Nix mo
 - Uses Solarized Light theme and Fira Code font
 - Custom keybindings for pane navigation (Ctrl+Shift+hjkl)
 
-**AeroSpace** (`aerospace.toml`):
-- Tiling window manager configuration for macOS
-- Not symlinked by Home Manager (manual deployment to `~/.aerospace.toml`)
-- Vim-style navigation (Alt+hjkl)
-- Workspace shortcuts: Alt+{a,d,f,s}
-- Service mode: Alt+Shift+; for advanced operations
-
 **Helix** (configured in home.nix):
 - Settings embedded in `programs.helix.settings`
 - Solarized Light theme
@@ -100,9 +93,6 @@ home.packages = [
 
 ### Program Configuration
 For programs with Home Manager modules (like git, fish, helix), edit their structured configuration in the `programs.<name>` sections rather than managing raw config files.
-
-### AeroSpace Configuration
-The `aerospace.toml` file must be manually copied to `~/.aerospace.toml` as it's not currently managed by Home Manager's `home.file`.
 
 ## Important Notes
 
